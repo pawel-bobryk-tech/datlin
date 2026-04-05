@@ -222,7 +222,7 @@ public class ${execution.simpleName} {
             .from(${execution.table.simpleName}.__table__)
             .where(
             <#list execution.table.record.primaryKeys as field>
-                eq("${field.metadata.name}", record.${field.name}())
+                eq(column("${field.metadata.name}"), record.${field.name}())
             </#list>
             );
     }
